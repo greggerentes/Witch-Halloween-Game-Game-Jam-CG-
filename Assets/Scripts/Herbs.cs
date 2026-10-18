@@ -7,7 +7,7 @@ public class Herbs : MonoBehaviour
     [SerializeField] private string herbName = "";
     
     private bool getHerb = false;
-    
+
     void Start()
     {
         
@@ -30,5 +30,10 @@ public class Herbs : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         getHerb = false;
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

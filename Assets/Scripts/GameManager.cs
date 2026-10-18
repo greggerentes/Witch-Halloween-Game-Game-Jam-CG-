@@ -33,4 +33,14 @@ public class GameManager : MonoBehaviour
             inventoryUI.UpdateInventoryUI();
         }
     }
+
+    public void ClearInventory()
+    {
+        inventory.Clear();
+
+        if(inventoryUI != null)
+        {
+            inventoryUI.UpdateInventoryUI();
+        }
+    }
 }

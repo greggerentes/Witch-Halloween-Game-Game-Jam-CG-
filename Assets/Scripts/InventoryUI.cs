@@ -29,7 +29,7 @@ public class InventoryUI : MonoBehaviour
 
         foreach(string item in GameManager.Instance.inventory)
         {
-            displayText += "-" + item + "\n";
+            displayText += "- " + item + "\n";
         }
 
         inventoryText.text = displayText;
