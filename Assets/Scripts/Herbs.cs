@@ -12,7 +12,7 @@ public class Herbs : MonoBehaviour
         
     }
 
-    void Update()
+    private void Update()
     {
         if(Keyboard.current.eKey.wasPressedThisFrame && getHerb == true)
         {
