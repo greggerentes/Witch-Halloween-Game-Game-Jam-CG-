@@ -1,10 +1,12 @@
 using UnityEngine;
-
+using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     
-    public int herbCount = 0;
+    public List<string> inventory = new List<string>();
+
+    [SerializeField] private InventoryUI inventoryUI;
     
     
     void Start()
@@ -22,8 +24,13 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
     
-    public void AddHerb()
+    public void AddHerb(string item)
     {
-        herbCount++;
+        inventory.Add(item);
+
+        if(inventoryUI != null)
+        {
+            inventoryUI.UpdateInventoryUI();
+        }
     }
 }

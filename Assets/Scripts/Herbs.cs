@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 
 public class Herbs : MonoBehaviour
 {
-    private bool getHerb = false;
+    [SerializeField] private string herbName = "";
     
+    private bool getHerb = false;
     
     void Start()
     {
@@ -16,7 +17,7 @@ public class Herbs : MonoBehaviour
     {
         if(Keyboard.current.eKey.wasPressedThisFrame && getHerb == true)
         {
-            GameManager.Instance.AddHerb();
+            GameManager.Instance.AddHerb(herbName);
             Destroy(gameObject);
         }
     }
