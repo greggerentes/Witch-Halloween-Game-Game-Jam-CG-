@@ -13,7 +13,7 @@ public class Pot : MonoBehaviour
 
     private void Update()
     {
-        if(Keyboard.current.eKey.wasPressedThisFrame && GameManager.Instance.inventory.Count > 0)
+        if(isPlayerNear == true && Keyboard.current.eKey.wasPressedThisFrame && GameManager.Instance.inventory.Count > 0)
         {
             Brew();
         }
