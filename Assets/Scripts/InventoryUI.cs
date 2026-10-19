@@ -3,35 +3,53 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI inventoryText;
-    
-    void Start()
+    [SerializeField] private TextMeshProUGUI herbsText;
+    [SerializeField] private TextMeshProUGUI potionsText;
+
+    private void Start()
     {
         UpdateInventoryUI();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void UpdateInventoryUI()
     {
-        if(inventoryText == null) return;
+        UpdateHerbsText();
+        UpdatePotionsText();
+    }
 
-        if(GameManager.Instance.inventory.Count == 0)
+    private void UpdateHerbsText()
+    {
+        if (herbsText == null) return;
+
+        if (GameManager.Instance.herbs.Count == 0)
         {
-            inventoryText.text = "Basket:\n- Empty";
+            herbsText.text = "Basket:\n- Empty";
             return;
         }
 
-        string displayText = "Basket:\n";
-
-        foreach(string item in GameManager.Instance.inventory)
+        string text = "Basket:\n";
+        foreach (string item in GameManager.Instance.herbs)
         {
-            displayText += "- " + item + "\n";
+            text += "- " + item + "\n";
+        }
+        herbsText.text = text;
+    }
+
+    private void UpdatePotionsText()
+    {
+        if (potionsText == null) return;
+
+        if (GameManager.Instance.potions.Count == 0)
+        {
+            potionsText.text = "Potions:\n- None";
+            return;
         }
 
-        inventoryText.text = displayText;
+        string text = "Potions:\n";
+        foreach (string potion in GameManager.Instance.potions)
+        {
+            text += "- " + potion + "\n";
+        }
+        potionsText.text = text;
     }
 }

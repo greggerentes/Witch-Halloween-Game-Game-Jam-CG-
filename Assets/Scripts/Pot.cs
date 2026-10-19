@@ -13,9 +13,9 @@ public class Pot : MonoBehaviour
 
     private void Update()
     {
-        if(isPlayerNear == true && Keyboard.current.eKey.wasPressedThisFrame && GameManager.Instance.inventory.Count > 0)
+        if(isPlayerNear == true && Keyboard.current.eKey.wasPressedThisFrame && GameManager.Instance.herbs.Count >= 2)
         {
-            Brew();
+            GetPotion();
         }
     }
 
@@ -32,5 +32,11 @@ public class Pot : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isPlayerNear = false;
+    }
+
+    public void GetPotion()
+    {
+        GameManager.Instance.herbs.RemoveRange(0, 2);
+        GameManager.Instance.ClearInventory();
     }
 }

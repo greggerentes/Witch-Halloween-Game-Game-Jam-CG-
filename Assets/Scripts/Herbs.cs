@@ -32,8 +32,5 @@ public class Herbs : MonoBehaviour
         getHerb = false;
     }
 
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
+    
 }
