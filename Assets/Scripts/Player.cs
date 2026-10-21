@@ -18,19 +18,19 @@ public class Player : MonoBehaviour
         float moveX = 0f;
         float moveY = 0f;
         
-        if(Keyboard.current.upArrowKey.isPressed)
+        if(Keyboard.current.wKey.isPressed)
         {
             moveY = 5f;
         }
-        if(Keyboard.current.downArrowKey.isPressed)
+        if(Keyboard.current.sKey.isPressed)
         {
             moveY = -5f;
         }
-        if(Keyboard.current.leftArrowKey.isPressed)
+        if(Keyboard.current.aKey.isPressed)
         {
             moveX = -5f;
         }
-        if(Keyboard.current.rightArrowKey.isPressed)
+        if(Keyboard.current.dKey.isPressed)
         {
             moveX = 5f;
         }
