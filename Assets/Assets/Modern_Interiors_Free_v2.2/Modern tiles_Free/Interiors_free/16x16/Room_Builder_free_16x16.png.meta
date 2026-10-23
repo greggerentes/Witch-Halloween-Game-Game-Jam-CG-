@@ -212,10 +212,10 @@ TextureImporter:
       name: Room_Builder_free_16x16_3
       rect:
         serializedVersion: 2
-        x: 224
+        x: 225
         y: 304
-        width: 48
-        height: 64
+        width: 46
+        height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
