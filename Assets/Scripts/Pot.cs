@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 
 public class Pot : MonoBehaviour
 {
+    [SerializeField] private GameObject driedLife;
+    [SerializeField] private GameObject frostGreen;
+
     private bool isPlayerNear = false;
     
     void Start()
@@ -13,15 +16,36 @@ public class Pot : MonoBehaviour
 
     private void Update()
     {
-        if(isPlayerNear == true && Keyboard.current.eKey.wasPressedThisFrame && GameManager.Instance.herbs.Count >= 2)
+        if(isPlayerNear == true && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            GetPotion();
+            MakePotion();
         }
     }
 
-    private void Brew()
+    public void MakePotion()
     {
-        GameManager.Instance.ClearInventory();
+        if(GameManager.Instance.herbs.Contains("Grass") && GameManager.Instance.herbs.Contains("Dry Grass"))
+        {
+            GameManager.Instance.herbs.Remove("Grass");
+            GameManager.Instance.herbs.Remove("Dry Grass");
+            GameManager.Instance.ClearInventory();
+
+            if (driedLife == null) return;
+
+            bool ShowPotion = driedLife.activeSelf;
+            driedLife.SetActive(!ShowPotion);
+        }
+        else if(GameManager.Instance.herbs.Contains("Grass") && GameManager.Instance.herbs.Contains("Blueberry"))
+        {
+            GameManager.Instance.herbs.Remove("Grass");
+            GameManager.Instance.herbs.Remove("Blueberry");
+            GameManager.Instance.ClearInventory();
+
+            if (frostGreen == null) return;
+
+            bool ShowPotion = frostGreen.activeSelf;
+            frostGreen.SetActive(!ShowPotion);
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,9 +58,5 @@ public class Pot : MonoBehaviour
         isPlayerNear = false;
     }
 
-    public void GetPotion()
-    {
-        GameManager.Instance.herbs.RemoveRange(0, 2);
-        GameManager.Instance.ClearInventory();
-    }
+    
 }
