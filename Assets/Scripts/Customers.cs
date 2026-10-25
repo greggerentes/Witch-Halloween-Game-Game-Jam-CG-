@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,9 +11,9 @@ public class Customer : MonoBehaviour
     private int currentBubbleIndex;
     private int randomIndex;
     private string wantedPotion;
+   
     private float timeSpawn = 3f;
 
-    
     private bool isPlayerNear = false;
      
     
@@ -68,7 +69,7 @@ public class Customer : MonoBehaviour
         {
             GameManager.Instance.potions.Remove(wantedPotion);
             GameManager.Instance.ClearInventory();
-
+            
             if (customer[randomIndex]!= null) customer[randomIndex].SetActive(false);
             if (orderBubble[currentBubbleIndex]!= null) orderBubble[currentBubbleIndex].SetActive(false);
 
