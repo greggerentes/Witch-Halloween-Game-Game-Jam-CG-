@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     
     public List<string> herbs = new List<string>();
     public List<string> potions = new List<string>();
+    
 
     [SerializeField] private InventoryUI inventoryUI;
     
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    
+    
     public void AddHerb(string item)
     {
         herbs.Add(item);
