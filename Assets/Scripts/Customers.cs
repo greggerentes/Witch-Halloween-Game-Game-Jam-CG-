@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -69,7 +68,9 @@ public class Customer : MonoBehaviour
         {
             GameManager.Instance.potions.Remove(wantedPotion);
             GameManager.Instance.ClearInventory();
-            
+
+            GameManager.Instance.AddGold(3);
+
             if (customer[randomIndex]!= null) customer[randomIndex].SetActive(false);
             if (orderBubble[currentBubbleIndex]!= null) orderBubble[currentBubbleIndex].SetActive(false);
 
