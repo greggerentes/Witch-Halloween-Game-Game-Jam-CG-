@@ -11,7 +11,7 @@ public class Customer : MonoBehaviour
     private int randomIndex;
     private string wantedPotion;
    
-    private float timeSpawn = 3f;
+    private float timeSpawn = 4f;
 
     private bool isPlayerNear = false;
      
@@ -69,13 +69,12 @@ public class Customer : MonoBehaviour
             GameManager.Instance.potions.Remove(wantedPotion);
             GameManager.Instance.ClearInventory();
 
-            GameManager.Instance.AddGold(3);
-
             if (customer[randomIndex]!= null) customer[randomIndex].SetActive(false);
             if (orderBubble[currentBubbleIndex]!= null) orderBubble[currentBubbleIndex].SetActive(false);
 
             Invoke(nameof(SpawnNextCustomer), timeSpawn);
-            
+
+            GameManager.Instance.AddGold(3);
         }
     }
     

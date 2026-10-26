@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using Unity.AppUI.UI;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -46,6 +47,14 @@ public class GameManager : MonoBehaviour
     public void AddGold(int amount)
     {
         gold += amount;
+        string text;
+        text = "Gold: " + gold;
+        goldTextUI.text = text;
+    }
+
+    public void RemoveGold(int amount)
+    {
+        gold -= amount;
         string text;
         text = "Gold: " + gold;
         goldTextUI.text = text;

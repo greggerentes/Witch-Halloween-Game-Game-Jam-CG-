@@ -15,10 +15,10 @@ public class Herbs : MonoBehaviour
 
     private void Update()
     {
-        if(Keyboard.current.eKey.wasPressedThisFrame && getHerb == true)
+        if(Keyboard.current.eKey.wasPressedThisFrame && getHerb)
         {
             GameManager.Instance.AddHerb(herbName);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
