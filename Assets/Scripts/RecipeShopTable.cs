@@ -10,6 +10,12 @@ public class RecipeShopTable : MonoBehaviour
     
     [SerializeField] private Button grassButton;
     [SerializeField] private GameObject grass;
+
+    [SerializeField] private Button dryGrassButton;
+    [SerializeField] private GameObject dryGrass;
+
+    [SerializeField] private Button blueberryButton;
+    [SerializeField] private GameObject blueberry;
     
     private bool isPlayerNear = false;
     
@@ -44,19 +50,32 @@ public class RecipeShopTable : MonoBehaviour
         herbsShopPaper.SetActive(!isCurrentlyOpen);
     }
 
-    public void Buy()
+    public void BuyGrass()
     {
-        TextMeshProUGUI buttonText = grassButton.GetComponentInChildren<TextMeshProUGUI>();
-        
-        if(buttonText.text == "Grass")
+        if(grass != null && !grass.activeSelf && GameManager.Instance.gold >= 1)
         {
-            if(GameManager.Instance.gold >= 1)
-            {
-                GameManager.Instance.RemoveGold(1);
-                grass.SetActive(true);
-            }
+            GameManager.Instance.RemoveGold(1);
+            grass.SetActive(true);
         }
     }
+
+    public void BuyDryGrass()
+    {
+        if(dryGrass != null && !dryGrass.activeSelf && GameManager.Instance.gold >= 1)
+        {
+            GameManager.Instance.RemoveGold(1);
+            dryGrass.SetActive(true);
+        }
+    }
+
+     public void BuyBlueberry()
+    {
+        if(blueberry != null && !blueberry.activeSelf && GameManager.Instance.gold >= 1)
+        {
+            GameManager.Instance.RemoveGold(1);
+            blueberry.SetActive(true);
+        }
+    }   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

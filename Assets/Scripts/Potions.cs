@@ -18,7 +18,7 @@ public class Potions : MonoBehaviour
         if(Keyboard.current.eKey.wasPressedThisFrame && getPotion == true)
         {
             GameManager.Instance.AddPotion(potionName);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
