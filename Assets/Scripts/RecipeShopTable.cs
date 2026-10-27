@@ -66,10 +66,12 @@ public class RecipeShopTable : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isPlayerNear = false;
+        
         if(recipePaper != null)
         {
             recipePaper.SetActive(false);
         }
+        
         if(herbsShopPaper != null)
         {
             herbsShopPaper.SetActive(false);
