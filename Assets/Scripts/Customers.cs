@@ -74,7 +74,7 @@ public class Customer : MonoBehaviour
 
             Invoke(nameof(SpawnNextCustomer), timeSpawn);
 
-            GameManager.Instance.AddGold(3);
+            GameManager.Instance.AddGold(2);
         }
     }
     

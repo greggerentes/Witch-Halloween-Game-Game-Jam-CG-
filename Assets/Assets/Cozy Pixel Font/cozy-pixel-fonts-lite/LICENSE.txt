@@ -1,0 +1,13 @@
+Cozy Pixel Fonts Lite — asset license
+
+You MAY:
+- Use these fonts in personal and commercial games, apps and videos.
+- Modify them: recolor the bitmap, resize, combine with your own UI.
+- Use them in as many projects as you like, with no royalties.
+
+You MAY NOT:
+- Resell or redistribute the fonts themselves, modified or not, as assets
+  (for example, in another font pack or on a free asset site).
+- Claim you created the original fonts.
+
+Credit is appreciated but not required: "Cozy Pixel Fonts Lite by Spaceyyy".

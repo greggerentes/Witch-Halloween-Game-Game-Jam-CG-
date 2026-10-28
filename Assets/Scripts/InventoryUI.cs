@@ -23,11 +23,11 @@ public class InventoryUI : MonoBehaviour
 
         if (GameManager.Instance.herbs.Count == 0)
         {
-            herbsText.text = "Basket:\n- Empty";
+            herbsText.text = "Herbs:\n- Empty";
             return;
         }
 
-        string text = "Basket:\n";
+        string text = "Herbs:\n";
         foreach (string item in GameManager.Instance.herbs)
         {
             text += "- " + item + "\n";
@@ -41,7 +41,7 @@ public class InventoryUI : MonoBehaviour
 
         if (GameManager.Instance.potions.Count == 0)
         {
-            potionsText.text = "Potions:\n- None";
+            potionsText.text = "Potions:\n- Empty";
             return;
         }
 

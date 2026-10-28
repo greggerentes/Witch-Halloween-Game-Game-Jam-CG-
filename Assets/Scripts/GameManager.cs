@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         gold += amount;
         string text;
-        text = "Gold: " + gold;
+        text = "Money: " + gold;
         goldTextUI.text = text;
     }
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         gold -= amount;
         string text;
-        text = "Gold: " + gold;
+        text = "Money: " + gold;
         goldTextUI.text = text;
     }
     
