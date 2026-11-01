@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D playerRigidbody2D;
     private Vector2 movement;
 
-    void Start()
+    private void Start()
     {
         playerRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
         float moveX = 0f;
         float moveY = 0f;
