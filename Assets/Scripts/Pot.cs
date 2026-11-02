@@ -8,11 +8,14 @@ public class Pot : MonoBehaviour
     [SerializeField] private GameObject frostGreen;
     [SerializeField] private GameObject dustyBerry;
 
+    private Animator potAnimator;
+    private int timeReset = 3;
+
     private bool isPlayerNear = false;
     
     void Start()
     {
-        
+        potAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -21,6 +24,11 @@ public class Pot : MonoBehaviour
         {
             MakePotion();
         }
+    }
+    
+    private void ResetPotAnimation()
+    {
+        potAnimator.SetInteger("PotBubble", 0);
     }
 
     public void MakePotion()
@@ -37,6 +45,8 @@ public class Pot : MonoBehaviour
 
             if (driedLife != null) driedLife.SetActive(true);
             GameManager.Instance.ClearInventory();
+            potAnimator.SetInteger("PotBubble", 1);
+            Invoke(nameof(ResetPotAnimation), timeReset);
         }
         else if(IsCombination(herb1, herb2, "Grass", "Blueberry"))
         {
@@ -44,6 +54,8 @@ public class Pot : MonoBehaviour
 
             if (frostGreen != null) frostGreen.SetActive(true);
             GameManager.Instance.ClearInventory();
+            potAnimator.SetInteger("PotBubble", 1);
+            Invoke(nameof(ResetPotAnimation), timeReset);
         }
         else if(IsCombination(herb1, herb2, "Dry Grass", "Blueberry"))
         {
@@ -51,6 +63,8 @@ public class Pot : MonoBehaviour
 
             if (dustyBerry != null) dustyBerry.SetActive(true);
             GameManager.Instance.ClearInventory();
+            potAnimator.SetInteger("PotBubble", 1);
+            Invoke(nameof(ResetPotAnimation), timeReset);
         }
     }
 
